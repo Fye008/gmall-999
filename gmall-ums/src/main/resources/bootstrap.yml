@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: gmall-ums
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.211.1:8848
