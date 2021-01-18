@@ -1,0 +1,15 @@
+server:
+  port: 18081
+
+spring:
+  application:
+    name: gmall-pms
+  datasource:
+    username: root
+    password: Abcd1234
+    url: jdbc:mysql://192.168.211.128:3306/guli_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
