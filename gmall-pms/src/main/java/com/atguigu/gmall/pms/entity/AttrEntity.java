@@ -5,11 +5,13 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
 
 /**
  * 商品属性
- * 
+ *
  * @author xiaofangfang
  * @email xiaofangfang@atguigu.com
  * @date 2021-01-18 17:41:47
@@ -18,6 +20,8 @@ import lombok.Data;
 @TableName("pms_attr")
 public class AttrEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+
 
 	/**
 	 * 属性id
@@ -60,5 +64,8 @@ public class AttrEntity implements Serializable {
 	 * 规格分组id
 	 */
 	private Long groupId;
+
+
+
 
 }

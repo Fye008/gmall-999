@@ -1,15 +1,18 @@
 package com.atguigu.gmall.pms.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
 
 /**
  * 属性分组
- * 
+ *
  * @author xiaofangfang
  * @email xiaofangfang@atguigu.com
  * @date 2021-01-18 17:41:46
@@ -44,5 +47,10 @@ public class AttrGroupEntity implements Serializable {
 	 * 备注
 	 */
 	private String remark;
+
+	@TableField(exist = false)
+	private List<AttrEntity> attrEntities;
+
+
 
 }
