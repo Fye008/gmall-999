@@ -1,6 +1,6 @@
 package com.atguigu.gmall.pms.controller;
 
-import com.alibaba.fastjson.JSONObject;
+
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.common.utils.BinaryUtil;

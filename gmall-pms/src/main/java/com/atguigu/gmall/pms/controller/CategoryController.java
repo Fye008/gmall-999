@@ -2,6 +2,7 @@ package com.atguigu.gmall.pms.controller;
 
 import java.util.List;
 
+import com.atguigu.gmall.pms.entity.AttrEntity;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,6 +35,15 @@ public class CategoryController {
 
     @Autowired
     private CategoryService categoryService;
+
+
+    //category/{cid}?type=0&searchType=1
+    @GetMapping("/{cid}")
+    public ResponseVo<List<AttrEntity>> getSkuByCid(@PathVariable Long cid){
+
+
+        return ResponseVo.ok();
+    }
 
 
     @GetMapping("/parent/{parentId}")

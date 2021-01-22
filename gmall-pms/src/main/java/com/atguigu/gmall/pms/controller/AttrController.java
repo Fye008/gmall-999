@@ -36,6 +36,17 @@ public class AttrController {
     private AttrService attrService;
 
 
+    @GetMapping("/category/{cid}")
+    public ResponseVo<List<AttrEntity>> queryByCidTypeSearchType(
+            @PathVariable Long cid,
+            @RequestParam(value = "type",required = false) Integer type,
+            @RequestParam(value = "searchType",required = false) Integer searchType){
+
+        List<AttrEntity> attrEntityList = attrService.queryByCidTypeSearchType(cid,type,searchType);
+        return ResponseVo.ok(attrEntityList);
+
+        // spu attr
+    }
 
 
 
