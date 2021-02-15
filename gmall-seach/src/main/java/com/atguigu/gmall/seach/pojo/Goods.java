@@ -30,17 +30,16 @@ public class Goods {
     @Field(type = FieldType.Keyword,index = false)
     private String subTitle;
 
-
     //排序所需字段
     @Field(type = FieldType.Integer)
-    private Integer saleCount; //销量
+    private long saleCount; //销量
 
     @Field(type = FieldType.Date)
     private Date createTime;
 
     //过滤的字段
     @Field(type = FieldType.Boolean)
-    private Boolean store;//库存
+    private Boolean store = false;//库存
 
 
     //品牌聚合所需要的字段

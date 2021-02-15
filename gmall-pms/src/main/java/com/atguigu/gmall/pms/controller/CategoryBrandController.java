@@ -52,7 +52,11 @@ public class CategoryBrandController {
     @GetMapping("{id}")
     @ApiOperation("详情查询")
     public ResponseVo<CategoryBrandEntity> queryCategoryBrandById(@PathVariable("id") Long id){
+
+
 		CategoryBrandEntity categoryBrand = categoryBrandService.getById(id);
+
+
 
         return ResponseVo.ok(categoryBrand);
     }
