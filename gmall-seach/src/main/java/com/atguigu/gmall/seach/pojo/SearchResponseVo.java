@@ -16,7 +16,7 @@ public class SearchResponseVo {
     private List<CategoryEntity> categoryList;
 
     //规格参数过滤条件
-    private List<SearchReponseAttrVo> filters;
+    private List<SearchResponseAttrVo> filters;
 
     private Integer pageNum;
 

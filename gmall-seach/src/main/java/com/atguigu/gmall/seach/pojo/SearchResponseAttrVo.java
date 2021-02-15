@@ -5,9 +5,9 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class SearchReponseAttrVo {
+public class SearchResponseAttrVo {
 
-    private Integer attrId;
+    private Long attrId;
 
     private String attrName;
 

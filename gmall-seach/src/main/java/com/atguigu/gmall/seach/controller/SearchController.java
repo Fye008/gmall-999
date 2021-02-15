@@ -2,6 +2,7 @@ package com.atguigu.gmall.seach.controller;
 
 import com.atguigu.gmall.common.bean.ResponseVo;
 import com.atguigu.gmall.seach.pojo.SearchParamVo;
+import com.atguigu.gmall.seach.pojo.SearchResponseVo;
 import com.atguigu.gmall.seach.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,9 +20,8 @@ public class SearchController {
     @GetMapping
     @ResponseBody
     public ResponseVo<Object> search(SearchParamVo searchParamVo) {
-        searchService.search(searchParamVo);
-        return ResponseVo.ok();
+       SearchResponseVo responseVo = searchService.search(searchParamVo);
+        return ResponseVo.ok(responseVo);
     }
-
 
 }
