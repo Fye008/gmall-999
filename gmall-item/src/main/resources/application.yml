@@ -1,0 +1,18 @@
+# 应用名称
+server:
+  port: 18088
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.211.1:8848
+  application:
+    name: gmall-item
+  datasource:
+    username: root
+    password: Abcd1234
+    url: jdbc:mysql://192.168.211.128:3306/guli_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false

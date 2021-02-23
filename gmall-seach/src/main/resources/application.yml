@@ -12,6 +12,18 @@ spring:
     rest:
       uris: 192.168.211.128:9200
 
+  jackson:
+    default-property-inclusion: non_null
+  rabbitmq:
+    host: 192.168.211.128
+    port: 5672
+    password: 123456
+    username: /xiaofang
+    virtual-host: /testVirtual
+    listener:
+      simple:
+        acknowledge-mode: manual
+
 
 
 mybatis-plus:

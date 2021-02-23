@@ -34,6 +34,29 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+    @PostMapping("/register")
+    public ResponseVo register(UserEntity userEntity,@RequestParam String code){
+
+        userService.register(userEntity,code);
+
+        return null;
+
+    }
+
+    @PostMapping("/code")
+    public ResponseVo code(@RequestParam String phone){
+
+        userService.code(phone);
+
+        return null;
+
+    }
+
+
+
+
+
     /**
      * 列表
      */

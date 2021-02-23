@@ -2,6 +2,7 @@ package com.atguigu.gmall.pms.controller;
 
 import java.util.List;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,30 @@ public class SkuImagesController {
 
     @Autowired
     private SkuImagesService skuImagesService;
+
+
+    /**
+     * 根据skuId获取图片列表
+     * @return
+     */
+    @GetMapping("/sku/{skuId}")
+    public ResponseVo<List<SkuImagesEntity>> queryImages(@PathVariable Long skuId){
+
+        List<SkuImagesEntity> skuImagesEntities = skuImagesService.queryImages(skuId);
+
+        return ResponseVo.ok(skuImagesEntities);
+    }
+
+
+    @GetMapping("/sku2/{skuId}")
+    public ResponseVo<List<SkuImagesEntity>> queryImages2(@PathVariable Long skuId){
+
+        List<SkuImagesEntity> skuImagesEntities = skuImagesService.list(new QueryWrapper<SkuImagesEntity>().eq("sku_id",skuId));
+
+        return ResponseVo.ok(skuImagesEntities);
+    }
+
+
 
     /**
      * 列表

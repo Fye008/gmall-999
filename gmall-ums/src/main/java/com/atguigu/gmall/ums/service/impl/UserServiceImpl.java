@@ -26,4 +26,26 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         return new PageResultVo(page);
     }
 
+    @Override
+    public void register(UserEntity userEntity, String code) {
+
+        //判断验证码是否正确
+
+
+
+
+
+    }
+
+    @Override
+    public void code(String phone) {
+
+        //todo 验证手机号是否合法
+
+
+        //调用阿里云发送短信
+
+
+    }
+
 }

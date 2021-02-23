@@ -33,3 +33,11 @@ spring:
           uri: lb://gmall-ums
           predicates:
             - Path=/ums/**
+        - id: index-router
+          uri: lb://gmall-index
+          predicates:
+            - Path=/index/**
+        - id: item-router
+          uri: lb://gmall-item
+          predicates:
+            - Host=item.gmall.com

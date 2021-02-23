@@ -1,0 +1,15 @@
+
+
+server:
+  port: 18086
+spring:
+  redis:
+    host: 192.168.211.128
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.211.1:8848
+      config:
+        server-addr: 192.168.211.1:8848
+  application:
+    name: gmall-index

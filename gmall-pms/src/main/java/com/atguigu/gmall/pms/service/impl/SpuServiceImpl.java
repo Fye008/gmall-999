@@ -10,6 +10,7 @@ import com.atguigu.gmall.pms.vo.SpuAttrValueVo;
 import com.atguigu.gmall.pms.vo.SpuVo;
 import com.atguigu.gmall.sms.vo.SkuSaleVo;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -51,6 +52,9 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
 
     @Autowired
     SkuSaleFeign skuSaleFeign;
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
     @Override
     public PageResultVo queryPage(PageParamVo paramVo) {
@@ -117,6 +121,7 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
         }
 
 
+
         //保存sku
         List<SkuVo> skus = spuVo.getSkus();
         if (!CollectionUtils.isEmpty(skus)) {
@@ -162,7 +167,9 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
             });
         }
 
+        rabbitTemplate.convertAndSend("pms_spu_exchange","spu_insert",spuId);
 
+        System.out.println("交换机发送信息成功...");
     }
 
 }

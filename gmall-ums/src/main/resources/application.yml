@@ -18,3 +18,11 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
 
+
+
+aliyun:
+  sms:
+    accessKeyId: LTAI4G1EJzWWaYAY6Z41AxrS
+    accessSecret: ea7Um2iM60Tp2Lh5vUY2Z78MigZHK0
+    TemplateCode: SMS_205885637
+    SignName: 美年健康

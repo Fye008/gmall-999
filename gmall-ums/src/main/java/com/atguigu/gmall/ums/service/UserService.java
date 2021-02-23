@@ -17,5 +17,9 @@ import java.util.Map;
 public interface UserService extends IService<UserEntity> {
 
     PageResultVo queryPage(PageParamVo paramVo);
+
+    void register(UserEntity userEntity, String code);
+
+    void code(String phone);
 }
 

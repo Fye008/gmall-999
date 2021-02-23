@@ -141,7 +141,7 @@ public class SearchService {
 
         //获取规格参数聚合
         ParsedNested attrAgg = (ParsedNested) aggregationMap.get("attrAgg");
-        ParsedStringTerms attrIdAgg = (ParsedStringTerms) attrAgg.getAggregations().get("attrIdAgg");
+        ParsedLongTerms attrIdAgg = (ParsedLongTerms) attrAgg.getAggregations().get("attrIdAgg");
         List<? extends Terms.Bucket> buckets = attrIdAgg.getBuckets();
         if (!CollectionUtils.isEmpty(buckets)) {
 
