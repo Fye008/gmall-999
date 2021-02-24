@@ -5,4 +5,6 @@ import com.atguigu.gmall.item.vo.ItemVo;
 public interface ItemService {
 
     ItemVo queryItemBySkuId(Long skuId);
+
+    void  generateHtml(Long skuId);
 }
