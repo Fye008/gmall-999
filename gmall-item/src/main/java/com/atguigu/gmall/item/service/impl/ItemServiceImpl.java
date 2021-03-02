@@ -31,6 +31,7 @@ public class ItemServiceImpl implements ItemService {
     private GmallPmsClient gmallPmsClient;
 
     @Autowired
+
     private GmallWmsClient gmallWmsClient;
 
 
@@ -53,8 +54,12 @@ public class ItemServiceImpl implements ItemService {
                 return null;
             }
 
-            BeanUtils.copyProperties(skuEntity, itemVo);
-
+            itemVo.setSkuId(skuId);
+            itemVo.setTitle(skuEntity.getTitle());
+            itemVo.setSubTitle(skuEntity.getSubtitle());
+            itemVo.setDefaultImage(skuEntity.getDefaultImage());
+            itemVo.setPrice(skuEntity.getPrice());
+            itemVo.setWeight(skuEntity.getWeight());
             return skuEntity;
         }, threadPoolExecutor);
 

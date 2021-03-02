@@ -1,0 +1,23 @@
+server:
+  port: 18089
+
+spring:
+  application:
+    name: gmall-author
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.211.1:8848
+
+  thymeleaf:
+    cache: false
+
+
+
+jwt:
+  pubKeyPath: F:\rsa\rsa.pub
+  priKeyPath: F:\rsa\rsa.pri
+  secret: 30489ouerweljrLROE@#)(@$*343jlsdf
+  cookieName: GMALL-TOKEN
+  expire: 180
+  unick: unick

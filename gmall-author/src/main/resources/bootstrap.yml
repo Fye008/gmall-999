@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: gmall-author
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.211.1:8848

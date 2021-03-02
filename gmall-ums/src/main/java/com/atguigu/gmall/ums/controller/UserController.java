@@ -35,13 +35,28 @@ public class UserController {
     private UserService userService;
 
 
+    @GetMapping("/query")
+    public ResponseVo<UserEntity> queryUser(@RequestParam("loginName") String loginName,@RequestParam("password") String password){
+
+        UserEntity userEntity = userService.queryUser(loginName,password);
+        return ResponseVo.ok(userEntity);
+    }
+
+
     @PostMapping("/register")
     public ResponseVo register(UserEntity userEntity,@RequestParam String code){
 
         userService.register(userEntity,code);
 
-        return null;
+        return ResponseVo.ok();
 
+    }
+
+    @GetMapping("/check/{data}/{type}")
+    public ResponseVo checkData(@PathVariable("data") String data,@PathVariable("type") Integer type){
+
+        Boolean flag =  userService.checkData(data,type);
+        return ResponseVo.ok(flag);
     }
 
     @PostMapping("/code")
@@ -50,7 +65,6 @@ public class UserController {
         userService.code(phone);
 
         return null;
-
     }
 
 

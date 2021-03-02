@@ -41,3 +41,26 @@ spring:
           uri: lb://gmall-item
           predicates:
             - Host=item.gmall.com
+          filters:
+            - Auth=/hha,/hha2,/hha3
+        - id: auth-router
+          uri: lb://gmall-author
+          predicates:
+            - Host=sso.gmall.com
+        - id: cart-router
+          uri: lb://gmall-cart
+          predicates:
+            - Host=cart.gmall.com
+
+
+
+
+
+
+jwt:
+  pubKeyPath: F:\rsa\rsa.pub
+  priKeyPath: F:\rsa\rsa.pri
+  secret: 30489ouerweljrLROE@#)(@$*343jlsdf
+  cookieName: GMALL-TOKEN
+  expire: 180
+  unick: unick
